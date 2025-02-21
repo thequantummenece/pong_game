@@ -42,6 +42,8 @@ hit_ball.dy = random.uniform(-5,5)
 left_player = 0
 right_player = 0
 
+font_type = 'Bubblegum.ttf'
+
 # Displays the score
 sketch = turtle.Turtle()
 sketch.speed(0)
@@ -141,7 +143,7 @@ while True:
         hit_ball.dy = random.uniform(-5, 5)
         left_player += 1
         sketch.clear()
-        sketch.write("Left_player : {}    Right_player: {}".format(left_player, right_player), align="center",font=("Courier", 24, "normal"))
+        sketch.write("Left_player : {}    Right_player: {}".format(left_player, right_player), align="center",font=(font_type, 24, "normal"))
 
     if hit_ball.xcor() < -500:
         hit_ball.goto(0, 0)
@@ -149,7 +151,7 @@ while True:
         hit_ball.dy = random.uniform(-5, 5)
         right_player += 1
         sketch.clear()
-        sketch.write("Left_player : {}    Right_player: {}".format(left_player, right_player), align="center",font=("Courier", 24, "normal"))
+        sketch.write("Left_player : {}    Right_player: {}".format(left_player, right_player), align="center",font=(font_type, 24, "normal"))
 
     # Paddle ball collision
     if (hit_ball.xcor() > 360 and hit_ball.xcor() < 380) and (hit_ball.ycor() < right_pad.ycor() + 60 and hit_ball.ycor() > right_pad.ycor() - 60):
